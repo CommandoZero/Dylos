@@ -1,0 +1,36 @@
+...Logging started...
+0.0516987: Server Started
+4.5446397: RespondedAwaitingApproval 8438780704828604586 127.0.0.1
+4.5601435: RespondedConnect 8438780704828604586 127.0.0.1
+4.5637275: Connected 8438780704828604586 127.0.0.1
+4.5713094: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: StartVoIP( 1 )
+
+4.5753522: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: SetClientID( 8438780704828604586 )
+
+4.5793119: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 0, 0, 0 )
+
+4.5835398: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 0, 1, 0 )
+
+4.5873399: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 0, 2, 0 )
+
+4.5913955: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 1, 0, 0 )
+
+4.5948592: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 1, 1, 0 )
+
+4.6074584: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 1, 2, 0 )
+
+4.6113535: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 2, 0, 0 )
+
+4.6162269: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 2, 1, 0 )
+
+4.6277685: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: UpdateGameState( 2, 2, 0 )
+
+4.8709344: LiteSyncUpdate 8438780704828604586 127.0.0.1
+5.7508012: RPC ServerOnly NetSyncId: -1 Function: GameRequest( 8438780704828604586, 502 )
+
+5.7587039: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: 502 Function: EnterGame(  )
+
+9.2225521: Disconnected 8438780704828604586 127.0.0.1
+9.2269124: => Outgoing RPC Sent to: SingleClient as SingleClient NetSyncId: -1 Function: VoiceClientDisconnected(  )
+
+151.2750839: Server shutdown

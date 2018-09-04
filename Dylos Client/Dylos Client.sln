@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dylos Client", "Assembly-CSharp.csproj", "{A3820877-28B3-DD77-15F5-873F81B6FEB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dylos Client", "Assembly-CSharp-firstpass.csproj", "{C1E38103-BF2F-4CA8-062D-D27B9DD1568D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3820877-28B3-DD77-15F5-873F81B6FEB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3820877-28B3-DD77-15F5-873F81B6FEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3820877-28B3-DD77-15F5-873F81B6FEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3820877-28B3-DD77-15F5-873F81B6FEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E38103-BF2F-4CA8-062D-D27B9DD1568D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E38103-BF2F-4CA8-062D-D27B9DD1568D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E38103-BF2F-4CA8-062D-D27B9DD1568D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E38103-BF2F-4CA8-062D-D27B9DD1568D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
