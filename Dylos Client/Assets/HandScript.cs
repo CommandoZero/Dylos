@@ -262,7 +262,7 @@ public class HandScript : MonoBehaviour
         public CardScript.Number highestNumber;
         public int numberOfCards;
 
-        public void UpdatePlay(Play.PlayType aType, CardScript.Suit aSuit, CardScript.Number aNumber, int aAmount)
+        public void UpdatePlay(PlayType aType, CardScript.Suit aSuit, CardScript.Number aNumber, int aAmount)
         {
             type = aType;
             highestSuit = aSuit;
@@ -281,6 +281,8 @@ public class HandScript : MonoBehaviour
     [SerializeField]
     float timeTilSkip;
     public Coroutine timer;
+
+
     public void ChangeTurn()
     {
         //This is a function that will start we'll have networked, so that when you pass/play, the next person's timer starts
@@ -292,11 +294,12 @@ public class HandScript : MonoBehaviour
         float timer = aTime;
         while (timer >= 0)
         {
-            PileScript.Instance.timerText.text = Mathf.Ceil(timer).ToString();
+            PileScript.Instance.UpdateButton(PileScript.Instance.passText, string.Format("Pass {0}", Mathf.Ceil(timer)));
+            //PileScript.Instance.timerText.text = Mathf.Ceil(timer).ToString();
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        PileScript.Instance.timerText.text = "";
+        // PileScript.Instance.timerText.text = "";
         PileScript.Instance.Pass(true);
     }
 }

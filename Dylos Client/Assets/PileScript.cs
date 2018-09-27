@@ -22,10 +22,8 @@ public class PileScript : MonoBehaviour
 
 
     public Button passButton;
-    [SerializeField]
-    Text passText;
+    public Text passText;
 
-    public Text timerText;
 
     private void Start()
     {
@@ -49,10 +47,12 @@ public class PileScript : MonoBehaviour
 
     PileLogic PlayHand(HandScript.Play aPlay)
     {
+        UpdateButton(playButton, playText, false, "Played");
+        UpdateButton(passButton, passText, false, "Pass");
         //Stop our skip timer
         StopCoroutine(HandScript.Instance.timer);
-        timerText.text = "";
-        UpdateButton(passButton, false);
+
+
         //Reform our hand and pile
 
         //Get the gameobjects of the cards we selected in a list
@@ -84,17 +84,25 @@ public class PileScript : MonoBehaviour
         return null;
     }
 
+    public void Pass(bool aStatus)
+    {
+        StopCoroutine(HandScript.Instance.timer);
+        passButton.interactable = !aStatus;
+        playButton.interactable = !aStatus;
+
+        UpdateButton(playButton, playText, !aStatus, "Passed");
+        UpdateButton(passText, "Pass");
+        HandScript.Instance.SetTurn(!aStatus);
+
+    }
     //Sets the place of the gameobjects
-    void SetCardTransform(GameObject[] aCard, int numberOfCards, Transform aTransform)
+    public void SetCardTransform(GameObject[] aCard, int numberOfCards, Transform aTransform)
     {
         //Float we'll use to set the x position of our card objects
         float xPos = 0;
         //Formula for spacing the pile cards
-        if (aTransform == transform)
-            xPos = (-0.1f * numberOfCards) + -0.1f;
-        //Formula for spacing the hand cards (idk why its different)
-        else
-            xPos = (-0.1f * numberOfCards) + -0.2f;
+        xPos = (-0.1f * numberOfCards) + -0.1f;
+
 
         //Loop that places each card in their new positions
         for (int i = 0; i < aCard.Length; i++)
@@ -102,6 +110,10 @@ public class PileScript : MonoBehaviour
             aCard[i].transform.SetParent(aTransform);
             xPos += 0.2f;
             aCard[i].transform.position = new Vector3(xPos, aTransform.position.y, aTransform.position.z);
+            if (aTransform != transform)
+                aCard[i].GetComponentInParent<CardScript>().origin = new Vector3(aCard[i].transform.position.x, aCard[i].transform.position.y, aCard[i].transform.position.z);
+
+
         }
         //Set the pile cards size
         if (aTransform == transform)
@@ -133,20 +145,17 @@ public class PileScript : MonoBehaviour
     {
         aButton.interactable = aStatus;
     }
-    public void UpdateButton(bool aStatus, string aMessage)
+    public void UpdateButton(Button aButton, Text aText, bool aStatus, string aMessage)
     {
-        playButton.interactable = aStatus;
-        playText.text = aMessage;
+        aButton.interactable = aStatus;
+        aText.text = aMessage;
+    }
+    public void UpdateButton(Text aText, string aMessage)
+    {
+        aText.text = aMessage;
     }
 
-    public void Pass(bool aStatus)
-    {
-        passButton.interactable = !aStatus;
-        playButton.interactable = !aStatus;
-        StopCoroutine(HandScript.Instance.timer);
-        UpdateButton(!aStatus, "Passed");
-        HandScript.Instance.SetTurn(!aStatus);
-    }
+
 
     public bool IsPlayable(HandScript.Play aPlay)
     {

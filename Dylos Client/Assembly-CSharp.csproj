@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\BindButtonScript.cs" />
     <Compile Include="Assets\CardScript.cs" />
+    <Compile Include="Assets\DealerScript.cs" />
     <Compile Include="Assets\HandScript.cs" />
     <Compile Include="Assets\MainMenuScript.cs" />
     <Compile Include="Assets\PileScript.cs" />
@@ -88,10 +89,10 @@
     <None Include="Assets\Toby Fredson\Rocky Hills Environment - Light Pack\Legacy Project\Legacy Project_Read Me!.txt" />
     <None Include="Assets\SkySerie Freebie\Hdri setup.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -292,16 +293,16 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zlib">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Assets/Plugins/Ionic.Zlib.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Assets/Plugins/Ionic.Zlib.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Assets/Plugins/LitJson.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="NSpeex">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Assets/Plugins/NSpeex.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Assets/Plugins/NSpeex.dll</HintPath>
     </Reference>
     <Reference Include="Lidgren.Network">
-      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos Client/Assets/Plugins/Lidgren/Lidgren.Network.dll</HintPath>
+      <HintPath>C:/Users/cdesm/Desktop/Dylos/Dylos/Dylos Client/Assets/Plugins/Lidgren/Lidgren.Network.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/cdesm/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

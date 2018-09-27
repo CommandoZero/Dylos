@@ -38,15 +38,15 @@ public class CardScript : MonoBehaviour
 
     [SerializeField]
     bool isSelected;
-
-    Vector3 origin;
+    [HideInInspector]
+    public Vector3 origin;
 
     bool switchable = false;
     bool interactable = true;
 
     private void Start()
     {
-        origin = transform.position;
+        origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
 
@@ -58,21 +58,46 @@ public class CardScript : MonoBehaviour
         return null;
     }
 
-   public CardLogic Play()
+    public CardLogic Play()
     {
         interactable = false;
         return null;
     }
+
+    CardLogic SwitchCard(Transform aTransform, CardScript aCard)
+    {
+        Vector3 temp = new Vector3(origin.x, origin.y, origin.z);
+        origin = new Vector3(aTransform.position.x, aTransform.position.y, aTransform.position.z);
+        aCard.origin = temp;
+        aCard.transform.position = aCard.origin;
+
+        return null;
+    }
+    [SerializeField]
+    CardScript tempCard;
+
     private void OnMouseDrag()
     {
         if (!HandScript.Instance.IsTurn())
         {
             Vector3 temp = Input.mousePosition;
-            temp.z = transform.position.z - Camera.main.transform.position.z;
-            if (temp.y - origin.y > 2)
-                transform.position = Camera.main.ScreenToWorldPoint(temp);
+            temp.z = 1.3f;
+            transform.position = Camera.main.ScreenToWorldPoint(temp);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, new Vector3(0, 0, 10), out hit, 1f))
+            {
+                if (hit.transform.gameObject.GetComponent<CardScript>())
+                {
+                    tempCard = hit.transform.gameObject.GetComponent<CardScript>();
+                    switchable = true;
+                }
+            }
+            else
+            {
+                tempCard = null;
+                switchable = false;
+            }
         }
-
     }
     private void OnMouseDown()
     {
@@ -83,25 +108,23 @@ public class CardScript : MonoBehaviour
                 isSelected = !isSelected;
                 UpdateCard(isSelected);
             }
-
         }
     }
 
     private void OnMouseUp()
     {
-        if (switchable)
+        if (!HandScript.Instance.IsTurn())
         {
-
+            if (switchable)
+            {
+                SwitchCard(tempCard.gameObject.transform, tempCard);
+            }
+            transform.position = origin;
         }
+
     }
 
-    private void OnCollisionStay(Collision hit)
-    {
-        if (hit.gameObject.GetComponent<CardScript>())
-        {
 
-        }
-    }
 
     public void ResetValues()
     {
